@@ -32,7 +32,7 @@ void MainWindow::mapWidgetInit()
     mapChannel = new MapChannel(this);
     channel -> registerObject("passId",mapChannel);
     this -> ui -> widget_map -> page() -> setWebChannel(channel);
-    this -> ui -> widget_map -> load(QUrl("file:///./onlinemap/map.html"));
+    this -> ui -> widget_map -> load(QUrl("file:///./onlinemap/map.html"));  // 把onlinemap复制到build目录下
     connect(mapChannel,&MapChannel::reloadMapClicked,this,&MainWindow::reloadMap);
 
     connect(mapChannel,&MapChannel::pointsCome,[](int index, double lng, double lat){
